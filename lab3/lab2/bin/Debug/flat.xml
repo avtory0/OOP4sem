@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<ArrayOfFlat xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <flat>
+    <footage xmlns="lab2">61</footage>
+    <amount_of_rooms xmlns="lab2">3</amount_of_rooms>
+    <kitchen xmlns="lab2">true</kitchen>
+    <living_room xmlns="lab2">false</living_room>
+    <bathroom xmlns="lab2">false</bathroom>
+    <balcony xmlns="lab2">false</balcony>
+    <basement xmlns="lab2">false</basement>
+    <Year_of_foundation xmlns="lab2">2021</Year_of_foundation>
+    <Material_of_building xmlns="lab2">Блоки</Material_of_building>
+    <Floor xmlns="lab2">3</Floor>
+    <Cost_of_flat xmlns="lab2">74810.5</Cost_of_flat>
+    <address xmlns="lab2">
+      <Country>Минск</Country>
+      <District>Казимировка</District>
+      <Street>wer</Street>
+      <Number_of_house>21</Number_of_house>
+      <Number_of_flat>11</Number_of_flat>
+    </address>
+  </flat>
+  <flat>
+    <footage xmlns="lab2">156</footage>
+    <amount_of_rooms xmlns="lab2">5</amount_of_rooms>
+    <kitchen xmlns="lab2">true</kitchen>
+    <living_room xmlns="lab2">false</living_room>
+    <bathroom xmlns="lab2">false</bathroom>
+    <balcony xmlns="lab2">true</balcony>
+    <basement xmlns="lab2">false</basement>
+    <Year_of_foundation xmlns="lab2">2021</Year_of_foundation>
+    <Material_of_building xmlns="lab2">Блоки</Material_of_building>
+    <Floor xmlns="lab2">3</Floor>
+    <Cost_of_flat xmlns="lab2">182110.5</Cost_of_flat>
+    <address xmlns="lab2">
+      <Country>Франкфурт</Country>
+      <District>Спутник</District>
+      <Street>wer</Street>
+      <Number_of_house>21</Number_of_house>
+      <Number_of_flat>11</Number_of_flat>
+    </address>
+  </flat>
+</ArrayOfFlat>
