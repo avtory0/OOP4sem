@@ -25,6 +25,42 @@ namespace lab2
         }
     }
 
+    public interface AbstrFactory
+    {
+        AbstrProperty setProperty();   
+    }
+
+    public interface AbstrProperty
+    {
+        string Property { get; }
+    }
+
+    public class RenovationFlat : AbstrProperty
+    {
+        public string Property => "Квартира с отделкой";
+    }
+
+    public class NoRenovationFlat : AbstrProperty
+    {
+        public string Property => "Квартира без отделкой";
+    }
+
+    public class RenovationFactory : AbstrFactory
+    {
+        public AbstrProperty setProperty()
+        {
+            return new RenovationFlat();
+        }
+    }
+
+    public class NoRenovationFactpry : AbstrFactory
+    {
+        public AbstrProperty setProperty()
+        {
+            return new NoRenovationFlat();
+        }
+    }
+
     public sealed class Singletone
     {
         private static Singletone instance;
@@ -64,7 +100,7 @@ namespace lab2
     public class Flat : IOperations, Prototype
     {
         public Flat(double footage, int amounOfRooms, int year, string material, int floor, bool kitchen,
-            bool balcony, bool basement, bool livingRoom, bool bathroom, Address address)
+            bool balcony, bool basement, bool livingRoom, bool bathroom, string property, Address address)
         {
             Footage = footage;
             AmountOfRooms = amounOfRooms;
@@ -76,6 +112,7 @@ namespace lab2
             Basement = basement;
             LivingRoom = livingRoom;
             Bathroom = bathroom;
+            Property = property;
             this.address = address;
         }
 
@@ -107,6 +144,8 @@ namespace lab2
         public int Floor { get; set; }
         [XmlElement(ElementName = "Cost_of_flat")]
         public double Cost { get; set; }
+        [XmlElement(ElementName = "Property")]
+        public string Property { get; set; }
         [Required]
         public Address address { get; set; }
         [Index]
@@ -171,6 +210,7 @@ namespace lab2
                 this.Basement,
                 this.LivingRoom,
                 this.Bathroom,
+                this.Property,
                 this.address);
         }
     }

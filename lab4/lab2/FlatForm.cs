@@ -25,6 +25,7 @@ namespace lab2
         int searchType;
         int amountObjects = 0;
         List<Flat> flats = new List<Flat>();
+        Flat objflat = new Flat();
         public FlatForm()
         {
             InitializeComponent();
@@ -125,8 +126,9 @@ namespace lab2
             bool bathroom = true;
             bool kitchen = true;
             bool livingRoom = true;
+            string property = "Квартира с отделкой";
             Address address = new Address(country, district, street, houseNumber, flatNumber, index);
-            Flat flat = new Flat(footage, amountOfRooms, year, material, floor, kitchen, balcony, basement, livingRoom, bathroom, address);
+            Flat flat = new Flat(footage, amountOfRooms, year, material, floor, kitchen, balcony, basement, livingRoom, bathroom, property, address);
             trackBarFootage.Value = 58;
             labelFootage.Text = $"Метраж: {trackBarFootage.Value}  М^2";
             numericUpDownRooms.Value = 3;
@@ -221,6 +223,7 @@ namespace lab2
                 houseNumber = textBoxNumberHouse.Text;
                 flatNumber = textBoxNumberFlat.Text;
                 index = textBoxIndex.Text;
+                string property = null;
                 if (checkBoxBalcony.Checked)
                     balcony = true;
                 if (checkBoxBasement.Checked)
@@ -231,8 +234,12 @@ namespace lab2
                     kitchen = true;
                 if (checkBoxLivingRoom.Checked)
                     livingRoom = true;
+                if (objflat.Property == string.Empty)
+                    MessageBox.Show("Выберите, продается ли квартира!");
+                else
+                    property = objflat.Property;
                 Address address = new Address(country, district, street, houseNumber, flatNumber, index);
-                Flat flat = new Flat(footage, amountOfRooms, year, material, floor, kitchen, balcony, basement, livingRoom, bathroom, address);
+                Flat flat = new Flat(footage, amountOfRooms, year, material, floor, kitchen, balcony, basement, livingRoom, bathroom, property,address);
                 flat.Cost = flat.CountCost();
                 textBoxCost.Text = flat.Cost.ToString();
                 Prototype clone = flat.Clone();
@@ -430,16 +437,6 @@ namespace lab2
             toolStripStatusLabelAction.Text = "Сохранены результаты сортировки";
         }
 
-        private void toolStripButtonSearch_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void toolStripButtonSort_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void ToolStripMenuItemSortResult_Click(object sender, EventArgs e)
         {
             buttonSortSave_Click(this, e);
@@ -517,6 +514,16 @@ namespace lab2
         private void фокусToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Singletone.Design(this);
+        }
+
+        private void renovation_CheckedChanged(object sender, EventArgs e)
+        {
+            if(renovation.Checked)
+            {
+                AbstrFactory renovationFactory = new RenovationFactory();
+                var feature = renovationFactory.setProperty();
+                objflat.Property = feature.Property;
+            }
         }
     }
 }

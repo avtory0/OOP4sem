@@ -117,6 +117,7 @@
             this.toolStripMenuItemSortPrice = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItemSave = new System.Windows.Forms.ToolStripMenuItem();
             this.ToolStripMenuItemHideTool = new System.Windows.Forms.ToolStripMenuItem();
+            this.фокусToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.textBoxSearched = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -141,7 +142,8 @@
             this.toolStripStatusLabelAction = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabelObjectsAmount = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabelAmount = new System.Windows.Forms.ToolStripStatusLabel();
-            this.фокусToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.renovation = new System.Windows.Forms.RadioButton();
+            this.noRenovation = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.trackBarFootage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownFloor)).BeginInit();
             this.groupBoxAddress.SuspendLayout();
@@ -177,7 +179,7 @@
             // 
             this.labelRooms.AutoSize = true;
             this.labelRooms.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.labelRooms.Location = new System.Drawing.Point(58, 171);
+            this.labelRooms.Location = new System.Drawing.Point(58, 163);
             this.labelRooms.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelRooms.Name = "labelRooms";
             this.labelRooms.Size = new System.Drawing.Size(159, 20);
@@ -188,7 +190,7 @@
             // 
             this.checkBoxKitchen.AutoSize = true;
             this.checkBoxKitchen.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.checkBoxKitchen.Location = new System.Drawing.Point(63, 236);
+            this.checkBoxKitchen.Location = new System.Drawing.Point(63, 228);
             this.checkBoxKitchen.Margin = new System.Windows.Forms.Padding(2);
             this.checkBoxKitchen.Name = "checkBoxKitchen";
             this.checkBoxKitchen.Size = new System.Drawing.Size(70, 24);
@@ -200,7 +202,7 @@
             // 
             this.checkBoxLivingRoom.AutoSize = true;
             this.checkBoxLivingRoom.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.checkBoxLivingRoom.Location = new System.Drawing.Point(63, 264);
+            this.checkBoxLivingRoom.Location = new System.Drawing.Point(63, 256);
             this.checkBoxLivingRoom.Margin = new System.Windows.Forms.Padding(2);
             this.checkBoxLivingRoom.Name = "checkBoxLivingRoom";
             this.checkBoxLivingRoom.Size = new System.Drawing.Size(99, 24);
@@ -212,7 +214,7 @@
             // 
             this.checkBoxBathroom.AutoSize = true;
             this.checkBoxBathroom.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.checkBoxBathroom.Location = new System.Drawing.Point(63, 292);
+            this.checkBoxBathroom.Location = new System.Drawing.Point(63, 284);
             this.checkBoxBathroom.Margin = new System.Windows.Forms.Padding(2);
             this.checkBoxBathroom.Name = "checkBoxBathroom";
             this.checkBoxBathroom.Size = new System.Drawing.Size(152, 24);
@@ -224,7 +226,7 @@
             // 
             this.checkBoxBalcony.AutoSize = true;
             this.checkBoxBalcony.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.checkBoxBalcony.Location = new System.Drawing.Point(63, 321);
+            this.checkBoxBalcony.Location = new System.Drawing.Point(63, 313);
             this.checkBoxBalcony.Margin = new System.Windows.Forms.Padding(2);
             this.checkBoxBalcony.Name = "checkBoxBalcony";
             this.checkBoxBalcony.Size = new System.Drawing.Size(84, 24);
@@ -236,7 +238,7 @@
             // 
             this.checkBoxBasement.AutoSize = true;
             this.checkBoxBasement.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.checkBoxBasement.Location = new System.Drawing.Point(63, 350);
+            this.checkBoxBasement.Location = new System.Drawing.Point(63, 342);
             this.checkBoxBasement.Margin = new System.Windows.Forms.Padding(2);
             this.checkBoxBasement.Name = "checkBoxBasement";
             this.checkBoxBasement.Size = new System.Drawing.Size(88, 24);
@@ -263,7 +265,7 @@
             // 
             this.labelYear.AutoSize = true;
             this.labelYear.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.labelYear.Location = new System.Drawing.Point(58, 392);
+            this.labelYear.Location = new System.Drawing.Point(58, 384);
             this.labelYear.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelYear.Name = "labelYear";
             this.labelYear.Size = new System.Drawing.Size(121, 20);
@@ -276,7 +278,7 @@
             this.dateTimePickerYear.CustomFormat = "yyyy";
             this.dateTimePickerYear.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.dateTimePickerYear.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePickerYear.Location = new System.Drawing.Point(63, 421);
+            this.dateTimePickerYear.Location = new System.Drawing.Point(63, 413);
             this.dateTimePickerYear.Margin = new System.Windows.Forms.Padding(2);
             this.dateTimePickerYear.Name = "dateTimePickerYear";
             this.dateTimePickerYear.Size = new System.Drawing.Size(57, 23);
@@ -286,7 +288,7 @@
             // 
             this.labelMaterial.AutoSize = true;
             this.labelMaterial.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.labelMaterial.Location = new System.Drawing.Point(59, 462);
+            this.labelMaterial.Location = new System.Drawing.Point(59, 447);
             this.labelMaterial.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelMaterial.Name = "labelMaterial";
             this.labelMaterial.Size = new System.Drawing.Size(124, 20);
@@ -304,7 +306,7 @@
             "Дерево",
             "Блоки",
             "Бетонные плиты"});
-            this.comboBoxMaterial.Location = new System.Drawing.Point(63, 487);
+            this.comboBoxMaterial.Location = new System.Drawing.Point(63, 472);
             this.comboBoxMaterial.Margin = new System.Windows.Forms.Padding(2);
             this.comboBoxMaterial.Name = "comboBoxMaterial";
             this.comboBoxMaterial.Size = new System.Drawing.Size(119, 24);
@@ -314,7 +316,7 @@
             // 
             this.labelFloor.AutoSize = true;
             this.labelFloor.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.labelFloor.Location = new System.Drawing.Point(62, 514);
+            this.labelFloor.Location = new System.Drawing.Point(62, 499);
             this.labelFloor.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelFloor.Name = "labelFloor";
             this.labelFloor.Size = new System.Drawing.Size(50, 20);
@@ -325,7 +327,7 @@
             // 
             this.numericUpDownFloor.BackColor = System.Drawing.Color.LightYellow;
             this.numericUpDownFloor.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.numericUpDownFloor.Location = new System.Drawing.Point(68, 537);
+            this.numericUpDownFloor.Location = new System.Drawing.Point(68, 530);
             this.numericUpDownFloor.Margin = new System.Windows.Forms.Padding(2);
             this.numericUpDownFloor.Maximum = new decimal(new int[] {
             30,
@@ -555,7 +557,7 @@
             // 
             this.numericUpDownRooms.BackColor = System.Drawing.Color.LightYellow;
             this.numericUpDownRooms.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.numericUpDownRooms.Location = new System.Drawing.Point(62, 201);
+            this.numericUpDownRooms.Location = new System.Drawing.Point(62, 193);
             this.numericUpDownRooms.Margin = new System.Windows.Forms.Padding(2);
             this.numericUpDownRooms.Maximum = new decimal(new int[] {
             10,
@@ -606,7 +608,7 @@
             // 
             this.buttonClearInfo.BackColor = System.Drawing.Color.Coral;
             this.buttonClearInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.buttonClearInfo.Location = new System.Drawing.Point(66, 629);
+            this.buttonClearInfo.Location = new System.Drawing.Point(66, 654);
             this.buttonClearInfo.Margin = new System.Windows.Forms.Padding(2);
             this.buttonClearInfo.Name = "buttonClearInfo";
             this.buttonClearInfo.Size = new System.Drawing.Size(108, 46);
@@ -619,7 +621,7 @@
             // 
             this.buttonSave.BackColor = System.Drawing.Color.Coral;
             this.buttonSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.buttonSave.Location = new System.Drawing.Point(340, 629);
+            this.buttonSave.Location = new System.Drawing.Point(340, 654);
             this.buttonSave.Margin = new System.Windows.Forms.Padding(2);
             this.buttonSave.Name = "buttonSave";
             this.buttonSave.Size = new System.Drawing.Size(148, 45);
@@ -632,7 +634,7 @@
             // 
             this.labelCostFlat.AutoSize = true;
             this.labelCostFlat.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.labelCostFlat.Location = new System.Drawing.Point(64, 574);
+            this.labelCostFlat.Location = new System.Drawing.Point(64, 596);
             this.labelCostFlat.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelCostFlat.Name = "labelCostFlat";
             this.labelCostFlat.Size = new System.Drawing.Size(170, 20);
@@ -643,7 +645,7 @@
             // 
             this.textBoxCost.BackColor = System.Drawing.Color.LightYellow;
             this.textBoxCost.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.textBoxCost.Location = new System.Drawing.Point(66, 597);
+            this.textBoxCost.Location = new System.Drawing.Point(66, 619);
             this.textBoxCost.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxCost.Name = "textBoxCost";
             this.textBoxCost.ReadOnly = true;
@@ -654,7 +656,7 @@
             // 
             this.buttonAutoFill.BackColor = System.Drawing.Color.Coral;
             this.buttonAutoFill.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.buttonAutoFill.Location = new System.Drawing.Point(178, 629);
+            this.buttonAutoFill.Location = new System.Drawing.Point(178, 654);
             this.buttonAutoFill.Margin = new System.Windows.Forms.Padding(2);
             this.buttonAutoFill.Name = "buttonAutoFill";
             this.buttonAutoFill.Size = new System.Drawing.Size(158, 46);
@@ -668,7 +670,7 @@
             this.labelBucks.AutoSize = true;
             this.labelBucks.BackColor = System.Drawing.Color.Transparent;
             this.labelBucks.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.labelBucks.Location = new System.Drawing.Point(146, 598);
+            this.labelBucks.Location = new System.Drawing.Point(146, 620);
             this.labelBucks.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelBucks.Name = "labelBucks";
             this.labelBucks.Size = new System.Drawing.Size(18, 20);
@@ -765,6 +767,13 @@
             this.ToolStripMenuItemHideTool.Size = new System.Drawing.Size(183, 20);
             this.ToolStripMenuItemHideTool.Text = "Скрыть панель инструментов";
             this.ToolStripMenuItemHideTool.Click += new System.EventHandler(this.ToolStripMenuItemHideTool_Click);
+            // 
+            // фокусToolStripMenuItem
+            // 
+            this.фокусToolStripMenuItem.Name = "фокусToolStripMenuItem";
+            this.фокусToolStripMenuItem.Size = new System.Drawing.Size(53, 20);
+            this.фокусToolStripMenuItem.Text = "Фокус";
+            this.фокусToolStripMenuItem.Click += new System.EventHandler(this.фокусToolStripMenuItem_Click);
             // 
             // textBoxSearched
             // 
@@ -952,7 +961,7 @@
             this.toolStripStatusLabelAction,
             this.toolStripStatusLabelObjectsAmount,
             this.toolStripStatusLabelAmount});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 710);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 733);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Padding = new System.Windows.Forms.Padding(1, 0, 10, 0);
             this.statusStrip1.Size = new System.Drawing.Size(1021, 24);
@@ -997,19 +1006,39 @@
             this.toolStripStatusLabelAmount.Size = new System.Drawing.Size(71, 19);
             this.toolStripStatusLabelAmount.Text = "количество";
             // 
-            // фокусToolStripMenuItem
+            // renovation
             // 
-            this.фокусToolStripMenuItem.Name = "фокусToolStripMenuItem";
-            this.фокусToolStripMenuItem.Size = new System.Drawing.Size(53, 20);
-            this.фокусToolStripMenuItem.Text = "Фокус";
-            this.фокусToolStripMenuItem.Click += new System.EventHandler(this.фокусToolStripMenuItem_Click);
+            this.renovation.AutoSize = true;
+            this.renovation.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.renovation.Location = new System.Drawing.Point(49, 567);
+            this.renovation.Name = "renovation";
+            this.renovation.Size = new System.Drawing.Size(91, 19);
+            this.renovation.TabIndex = 42;
+            this.renovation.TabStop = true;
+            this.renovation.Text = "С отделкой";
+            this.renovation.UseVisualStyleBackColor = true;
+            this.renovation.CheckedChanged += new System.EventHandler(this.renovation_CheckedChanged);
+            // 
+            // noRenovation
+            // 
+            this.noRenovation.AutoSize = true;
+            this.noRenovation.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.noRenovation.Location = new System.Drawing.Point(150, 567);
+            this.noRenovation.Name = "noRenovation";
+            this.noRenovation.Size = new System.Drawing.Size(97, 19);
+            this.noRenovation.TabIndex = 43;
+            this.noRenovation.TabStop = true;
+            this.noRenovation.Text = "Без отделки";
+            this.noRenovation.UseVisualStyleBackColor = true;
             // 
             // FlatForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.MistyRose;
-            this.ClientSize = new System.Drawing.Size(1021, 734);
+            this.ClientSize = new System.Drawing.Size(1021, 757);
+            this.Controls.Add(this.noRenovation);
+            this.Controls.Add(this.renovation);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.buttonSortSave);
@@ -1139,6 +1168,8 @@
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabelObjectsAmount;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabelAmount;
         private System.Windows.Forms.ToolStripMenuItem фокусToolStripMenuItem;
+        private System.Windows.Forms.RadioButton renovation;
+        private System.Windows.Forms.RadioButton noRenovation;
     }
 }
 
