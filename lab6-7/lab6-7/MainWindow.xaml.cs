@@ -1,4 +1,5 @@
-﻿using System;
+﻿using lab6_7.ViewsModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -43,9 +44,10 @@ namespace lab6_7
             this.Close();
         }
 
-        private void ShowAll(object sender, MouseButtonEventArgs e)
-        {
 
+        private void Show_Click(object sender, RoutedEventArgs e)
+        {
+            DataContext = new ItemListsModels();
         }
     }
 }

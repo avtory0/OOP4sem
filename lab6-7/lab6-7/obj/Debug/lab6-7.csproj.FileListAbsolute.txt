@@ -13,3 +13,6 @@ E:\kyrs2\2sem\oop\lab6-7\lab6-7\obj\Debug\lab6-7.csproj.GenerateResource.cache
 E:\kyrs2\2sem\oop\lab6-7\lab6-7\obj\Debug\lab6-7.csproj.CoreCompileInputs.cache
 E:\kyrs2\2sem\oop\lab6-7\lab6-7\obj\Debug\lab6-7.exe
 E:\kyrs2\2sem\oop\lab6-7\lab6-7\obj\Debug\lab6-7.pdb
+E:\kyrs2\2sem\oop\lab6-7\lab6-7\obj\Debug\Views\ItemLists.g.cs
+E:\kyrs2\2sem\oop\lab6-7\lab6-7\obj\Debug\GeneratedInternalTypeHelper.g.cs
+E:\kyrs2\2sem\oop\lab6-7\lab6-7\obj\Debug\Views\ItemLists.baml

@@ -4,12 +4,21 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:lab6_7"
+        xmlns:viewmodels="clr-namespace:lab6_7.ViewsModels"
+        xmlns:views="clr-namespace:lab6_7.Views"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" 
         Width="800"
         WindowStartupLocation="CenterScreen"
         Background="#eff2f3"
         WindowStyle="None">
+
+    <Window.Resources>
+        <DataTemplate x:Name="ItemListsTemplate" DataType="{x:Type viewmodels:ItemListsModels}">
+            <views:ItemLists DataContext="{Binding}"></views:ItemLists>
+        </DataTemplate>
+    </Window.Resources>
+    
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="40"/>
@@ -56,11 +65,11 @@
 
             <Grid.RowDefinitions>
                 <RowDefinition/>
-                <RowDefinition Height="60"/>
-                <RowDefinition Height="60"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="50"/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
-
+            
             <Button x:Name="Add"
                     Content="Add Item"
                     Grid.Row="1"
@@ -82,18 +91,17 @@
                 </Button.Style>
                 <Button.Template>
                     <ControlTemplate TargetType="Button">
-                        <Border Height="60" Width="100" CornerRadius="10" Background="{TemplateBinding Background}">
+                        <Border Height="50" Width="100" CornerRadius="10" Background="{TemplateBinding Background}">
                             <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center"></ContentPresenter>
                         </Border>
                     </ControlTemplate>
                 </Button.Template>
             </Button>
 
-            <Button x:Name="Show"
+            <Button x:Name="ShowItems"
                     Content="Show All"
                     Grid.Row="2"
-                    FontSize="16"
-                    MouseDown="ShowAll">
+                    FontSize="16" Click="Show_Click">
                 <Button.Style>
                     <Style TargetType="Button">
                         <Setter Property="TextElement.FontFamily" Value="Fonts/#museo"></Setter>
@@ -112,7 +120,7 @@
                 </Button.Style>
                 <Button.Template>
                     <ControlTemplate TargetType="Button">
-                        <Border Height="60" Width="100" CornerRadius="10" Background="{TemplateBinding Background}" >
+                        <Border Height="50" Width="100" CornerRadius="10" Background="{TemplateBinding Background}" >
                             <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center"></ContentPresenter>
                         </Border>
                     </ControlTemplate>
@@ -149,31 +157,7 @@
 
         </Grid>
 
-        <!--<StackPanel Width="100"
-                    HorizontalAlignment="Left"
-                    Background="#0e88df">
-
-            <Button x:Name="Home"
-                    Height="70"
-                    Background="White"
-                    BorderBrush="Transparent"
-                    Margin="0,110,0,0">
-            </Button>
-            
-            <Button x:Name="AddItem"
-                    Height="70"
-                    Background="White"
-                    BorderBrush="Transparent"
-                    Margin="0,0,0,0">
-            </Button>
-
-            <Button x:Name="ShowList"
-                    Height="70"
-                    Background="White"
-                    BorderBrush="Transparent"
-                    Margin="0,0,0,0">
-            </Button>
-            
-        </StackPanel>-->
+        <ContentControl Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" Content="{Binding}"></ContentControl>
+        
     </Grid>
 </Window>
