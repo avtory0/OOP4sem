@@ -21,6 +21,7 @@ namespace lab2
         public IEnumerable<Flat> searchedYear;
         public IEnumerable<Flat> searchedDistrict;
         public IEnumerable<Flat> searchedRooms;
+        public static string country, district, street, houseNumber, flatNumber, index;
         int sortType;
         int searchType;
         int amountObjects = 0;
@@ -206,6 +207,7 @@ namespace lab2
             bool bathroom = false;
             bool kitchen = false;
             bool livingRoom = false;
+            string feature = null;
             try
             {
                 street = textBoxStreet.Text;
@@ -223,7 +225,7 @@ namespace lab2
                 houseNumber = textBoxNumberHouse.Text;
                 flatNumber = textBoxNumberFlat.Text;
                 index = textBoxIndex.Text;
-                string property = null;
+                string Feature = null;
                 if (checkBoxBalcony.Checked)
                     balcony = true;
                 if (checkBoxBasement.Checked)
@@ -234,12 +236,12 @@ namespace lab2
                     kitchen = true;
                 if (checkBoxLivingRoom.Checked)
                     livingRoom = true;
-                if (objflat.Property == string.Empty)
-                    MessageBox.Show("Выберите, продается ли квартира!");
+                if (objflat.Feature == string.Empty)
+                    MessageBox.Show("Выберите, состаяние квартиры");
                 else
-                    property = objflat.Property;
+                    feature = objflat.Feature;
                 Address address = new Address(country, district, street, houseNumber, flatNumber, index);
-                Flat flat = new Flat(footage, amountOfRooms, year, material, floor, kitchen, balcony, basement, livingRoom, bathroom, property,address);
+                Flat flat = new Flat(footage, amountOfRooms, year, material, floor, kitchen, balcony, basement, livingRoom, bathroom, feature, address);
                 flat.Cost = flat.CountCost();
                 textBoxCost.Text = flat.Cost.ToString();
                 Prototype clone = flat.Clone();
@@ -487,6 +489,7 @@ namespace lab2
             ToolStripMenuItemSearchResult_Click(this, e);
         }
 
+
         private void toolStripButtonAbout_Click(object sender, EventArgs e)
         {
             toolStripMenuItemSave_Click(this, e);
@@ -522,8 +525,14 @@ namespace lab2
             {
                 AbstrFactory renovationFactory = new RenovationFactory();
                 var feature = renovationFactory.setProperty();
-                objflat.Property = feature.Property;
+                objflat.Feature = feature.Property;
             }
+        }
+        private void noRenovation_CheckedChanged(object sender, EventArgs e)
+        {
+            AbstrFactory norenovationFactory = new RenovationFactory();
+            var feature = norenovationFactory.setProperty();
+            objflat.Feature = feature.Property;
         }
     }
 }

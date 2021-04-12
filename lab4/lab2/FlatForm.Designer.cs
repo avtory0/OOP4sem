@@ -28,47 +28,47 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.TreeNode treeNode22 = new System.Windows.Forms.TreeNode("Минск");
-            System.Windows.Forms.TreeNode treeNode23 = new System.Windows.Forms.TreeNode("Могилев");
-            System.Windows.Forms.TreeNode treeNode24 = new System.Windows.Forms.TreeNode("Гомель");
-            System.Windows.Forms.TreeNode treeNode25 = new System.Windows.Forms.TreeNode("Беларусь", new System.Windows.Forms.TreeNode[] {
-            treeNode22,
-            treeNode23,
-            treeNode24});
-            System.Windows.Forms.TreeNode treeNode26 = new System.Windows.Forms.TreeNode("Колорадо");
-            System.Windows.Forms.TreeNode treeNode27 = new System.Windows.Forms.TreeNode("Вайоминг");
-            System.Windows.Forms.TreeNode treeNode28 = new System.Windows.Forms.TreeNode("Техас");
-            System.Windows.Forms.TreeNode treeNode29 = new System.Windows.Forms.TreeNode("США", new System.Windows.Forms.TreeNode[] {
-            treeNode26,
-            treeNode27,
-            treeNode28});
-            System.Windows.Forms.TreeNode treeNode30 = new System.Windows.Forms.TreeNode("Киев");
-            System.Windows.Forms.TreeNode treeNode31 = new System.Windows.Forms.TreeNode("Львов");
-            System.Windows.Forms.TreeNode treeNode32 = new System.Windows.Forms.TreeNode("Одесса");
-            System.Windows.Forms.TreeNode treeNode33 = new System.Windows.Forms.TreeNode("Украина", new System.Windows.Forms.TreeNode[] {
-            treeNode30,
-            treeNode31,
-            treeNode32});
-            System.Windows.Forms.TreeNode treeNode34 = new System.Windows.Forms.TreeNode("Нюрбург");
-            System.Windows.Forms.TreeNode treeNode35 = new System.Windows.Forms.TreeNode("Франкфурт");
-            System.Windows.Forms.TreeNode treeNode36 = new System.Windows.Forms.TreeNode("Берлин");
-            System.Windows.Forms.TreeNode treeNode37 = new System.Windows.Forms.TreeNode("Германия", new System.Windows.Forms.TreeNode[] {
-            treeNode34,
-            treeNode35,
-            treeNode36});
-            System.Windows.Forms.TreeNode treeNode38 = new System.Windows.Forms.TreeNode("Москва");
-            System.Windows.Forms.TreeNode treeNode39 = new System.Windows.Forms.TreeNode("Санкт-Петербург");
-            System.Windows.Forms.TreeNode treeNode40 = new System.Windows.Forms.TreeNode("Владивосток");
-            System.Windows.Forms.TreeNode treeNode41 = new System.Windows.Forms.TreeNode("Россия", new System.Windows.Forms.TreeNode[] {
-            treeNode38,
-            treeNode39,
-            treeNode40});
-            System.Windows.Forms.TreeNode treeNode42 = new System.Windows.Forms.TreeNode("Страна", new System.Windows.Forms.TreeNode[] {
-            treeNode25,
-            treeNode29,
-            treeNode33,
-            treeNode37,
-            treeNode41});
+            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("Минск");
+            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("Могилев");
+            System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("Гомель");
+            System.Windows.Forms.TreeNode treeNode4 = new System.Windows.Forms.TreeNode("Беларусь", new System.Windows.Forms.TreeNode[] {
+            treeNode1,
+            treeNode2,
+            treeNode3});
+            System.Windows.Forms.TreeNode treeNode5 = new System.Windows.Forms.TreeNode("Колорадо");
+            System.Windows.Forms.TreeNode treeNode6 = new System.Windows.Forms.TreeNode("Вайоминг");
+            System.Windows.Forms.TreeNode treeNode7 = new System.Windows.Forms.TreeNode("Техас");
+            System.Windows.Forms.TreeNode treeNode8 = new System.Windows.Forms.TreeNode("США", new System.Windows.Forms.TreeNode[] {
+            treeNode5,
+            treeNode6,
+            treeNode7});
+            System.Windows.Forms.TreeNode treeNode9 = new System.Windows.Forms.TreeNode("Киев");
+            System.Windows.Forms.TreeNode treeNode10 = new System.Windows.Forms.TreeNode("Львов");
+            System.Windows.Forms.TreeNode treeNode11 = new System.Windows.Forms.TreeNode("Одесса");
+            System.Windows.Forms.TreeNode treeNode12 = new System.Windows.Forms.TreeNode("Украина", new System.Windows.Forms.TreeNode[] {
+            treeNode9,
+            treeNode10,
+            treeNode11});
+            System.Windows.Forms.TreeNode treeNode13 = new System.Windows.Forms.TreeNode("Нюрбург");
+            System.Windows.Forms.TreeNode treeNode14 = new System.Windows.Forms.TreeNode("Франкфурт");
+            System.Windows.Forms.TreeNode treeNode15 = new System.Windows.Forms.TreeNode("Берлин");
+            System.Windows.Forms.TreeNode treeNode16 = new System.Windows.Forms.TreeNode("Германия", new System.Windows.Forms.TreeNode[] {
+            treeNode13,
+            treeNode14,
+            treeNode15});
+            System.Windows.Forms.TreeNode treeNode17 = new System.Windows.Forms.TreeNode("Москва");
+            System.Windows.Forms.TreeNode treeNode18 = new System.Windows.Forms.TreeNode("Санкт-Петербург");
+            System.Windows.Forms.TreeNode treeNode19 = new System.Windows.Forms.TreeNode("Владивосток");
+            System.Windows.Forms.TreeNode treeNode20 = new System.Windows.Forms.TreeNode("Россия", new System.Windows.Forms.TreeNode[] {
+            treeNode17,
+            treeNode18,
+            treeNode19});
+            System.Windows.Forms.TreeNode treeNode21 = new System.Windows.Forms.TreeNode("Страна", new System.Windows.Forms.TreeNode[] {
+            treeNode4,
+            treeNode8,
+            treeNode12,
+            treeNode16,
+            treeNode20});
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FlatForm));
             this.label1 = new System.Windows.Forms.Label();
             this.labelFootage = new System.Windows.Forms.Label();
@@ -506,50 +506,50 @@
             this.treeViewCountry.Location = new System.Drawing.Point(20, 38);
             this.treeViewCountry.Margin = new System.Windows.Forms.Padding(2);
             this.treeViewCountry.Name = "treeViewCountry";
-            treeNode22.Name = "Minsk";
-            treeNode22.Text = "Минск";
-            treeNode23.Name = "Mogilev";
-            treeNode23.Text = "Могилев";
-            treeNode24.Name = "Gomel";
-            treeNode24.Text = "Гомель";
-            treeNode25.Name = "Belarus";
-            treeNode25.Text = "Беларусь";
-            treeNode26.Name = "Colorado";
-            treeNode26.Text = "Колорадо";
-            treeNode27.Name = "Wayoming";
-            treeNode27.Text = "Вайоминг";
-            treeNode28.Name = "Texas";
-            treeNode28.Text = "Техас";
-            treeNode29.Name = "USA";
-            treeNode29.Text = "США";
-            treeNode30.Name = "Kiev";
-            treeNode30.Text = "Киев";
-            treeNode31.Name = "Lviv";
-            treeNode31.Text = "Львов";
-            treeNode32.Name = "Odessa";
-            treeNode32.Text = "Одесса";
-            treeNode33.Name = "Ukraine";
-            treeNode33.Text = "Украина";
-            treeNode34.Name = "Nurburg";
-            treeNode34.Text = "Нюрбург";
-            treeNode35.Name = "Frankfurt";
-            treeNode35.Text = "Франкфурт";
-            treeNode36.Name = "Berlin";
-            treeNode36.Text = "Берлин";
-            treeNode37.Name = "Germany";
-            treeNode37.Text = "Германия";
-            treeNode38.Name = "Moscow";
-            treeNode38.Text = "Москва";
-            treeNode39.Name = "SPB";
-            treeNode39.Text = "Санкт-Петербург";
-            treeNode40.Name = "Vladivostok";
-            treeNode40.Text = "Владивосток";
-            treeNode41.Name = "Russia";
-            treeNode41.Text = "Россия";
-            treeNode42.Name = "Country";
-            treeNode42.Text = "Страна";
+            treeNode1.Name = "Minsk";
+            treeNode1.Text = "Минск";
+            treeNode2.Name = "Mogilev";
+            treeNode2.Text = "Могилев";
+            treeNode3.Name = "Gomel";
+            treeNode3.Text = "Гомель";
+            treeNode4.Name = "Belarus";
+            treeNode4.Text = "Беларусь";
+            treeNode5.Name = "Colorado";
+            treeNode5.Text = "Колорадо";
+            treeNode6.Name = "Wayoming";
+            treeNode6.Text = "Вайоминг";
+            treeNode7.Name = "Texas";
+            treeNode7.Text = "Техас";
+            treeNode8.Name = "USA";
+            treeNode8.Text = "США";
+            treeNode9.Name = "Kiev";
+            treeNode9.Text = "Киев";
+            treeNode10.Name = "Lviv";
+            treeNode10.Text = "Львов";
+            treeNode11.Name = "Odessa";
+            treeNode11.Text = "Одесса";
+            treeNode12.Name = "Ukraine";
+            treeNode12.Text = "Украина";
+            treeNode13.Name = "Nurburg";
+            treeNode13.Text = "Нюрбург";
+            treeNode14.Name = "Frankfurt";
+            treeNode14.Text = "Франкфурт";
+            treeNode15.Name = "Berlin";
+            treeNode15.Text = "Берлин";
+            treeNode16.Name = "Germany";
+            treeNode16.Text = "Германия";
+            treeNode17.Name = "Moscow";
+            treeNode17.Text = "Москва";
+            treeNode18.Name = "SPB";
+            treeNode18.Text = "Санкт-Петербург";
+            treeNode19.Name = "Vladivostok";
+            treeNode19.Text = "Владивосток";
+            treeNode20.Name = "Russia";
+            treeNode20.Text = "Россия";
+            treeNode21.Name = "Country";
+            treeNode21.Text = "Страна";
             this.treeViewCountry.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode42});
+            treeNode21});
             this.treeViewCountry.Size = new System.Drawing.Size(162, 174);
             this.treeViewCountry.TabIndex = 0;
             // 
@@ -1030,6 +1030,7 @@
             this.noRenovation.TabStop = true;
             this.noRenovation.Text = "Без отделки";
             this.noRenovation.UseVisualStyleBackColor = true;
+            this.noRenovation.CheckedChanged += new System.EventHandler(this.noRenovation_CheckedChanged);
             // 
             // FlatForm
             // 

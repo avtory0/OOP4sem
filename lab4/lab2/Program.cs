@@ -100,7 +100,7 @@ namespace lab2
     public class Flat : IOperations, Prototype
     {
         public Flat(double footage, int amounOfRooms, int year, string material, int floor, bool kitchen,
-            bool balcony, bool basement, bool livingRoom, bool bathroom, string property, Address address)
+            bool balcony, bool basement, bool livingRoom, bool bathroom, string feature, Address address)
         {
             Footage = footage;
             AmountOfRooms = amounOfRooms;
@@ -112,7 +112,7 @@ namespace lab2
             Basement = basement;
             LivingRoom = livingRoom;
             Bathroom = bathroom;
-            Property = property;
+            Feature = feature;
             this.address = address;
         }
 
@@ -144,8 +144,8 @@ namespace lab2
         public int Floor { get; set; }
         [XmlElement(ElementName = "Cost_of_flat")]
         public double Cost { get; set; }
-        [XmlElement(ElementName = "Property")]
-        public string Property { get; set; }
+        [XmlElement(ElementName = "Features")]
+        public string Feature { get; set; }
         [Required]
         public Address address { get; set; }
         [Index]
@@ -210,10 +210,67 @@ namespace lab2
                 this.Basement,
                 this.LivingRoom,
                 this.Bathroom,
-                this.Property,
+                this.Feature,
                 this.address);
         }
     }
+
+    public abstract class AddressBuilder
+    {
+        public Address address { get; private set; }
+        public void CreateAddress()
+        {
+            address = new Address();
+        }
+        public abstract void setCountry(string counrty);
+        public abstract void setDistrict(string district);
+        public abstract void setStreet(string street);
+        public abstract void setHouseNumber(string houseNumber);
+        public abstract void setFlatNumber(string flatNumber);
+    }
+
+    public class Address1 : AddressBuilder
+    {
+        public override void setCountry(string counrty)
+        {
+            address.Country = counrty;
+        }
+
+        public override void setDistrict(string district)
+        {
+            address.District = district;
+        }
+
+        public override void setFlatNumber(string flatNumber)
+        {
+            address.FlatNumber = flatNumber;
+        }
+
+        public override void setHouseNumber(string houseNumber)
+        {
+            address.HouseNumber = houseNumber;
+        }
+
+        public override void setStreet(string street)
+        {
+            address.Street = street;
+        }
+    }
+
+    public class MakeAddress
+    {
+        public Address Make(AddressBuilder builder)
+        {
+            builder.CreateAddress();
+            builder.setCountry(FlatForm.country);
+            builder.setDistrict(FlatForm.district);
+            builder.setFlatNumber(FlatForm.flatNumber);
+            builder.setHouseNumber(FlatForm.houseNumber);
+            builder.setStreet(FlatForm.street);
+            return builder.address;
+        }
+    }
+
     [Serializable]
     public class Address
     {

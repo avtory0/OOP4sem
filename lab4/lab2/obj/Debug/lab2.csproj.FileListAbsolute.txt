@@ -45,3 +45,15 @@ E:\читы\drugov_labs\oop_2k2sem\lab4\lab2\obj\Debug\lab2.csproj.GenerateResou
 E:\читы\drugov_labs\oop_2k2sem\lab4\lab2\obj\Debug\lab2.csproj.CoreCompileInputs.cache
 E:\читы\drugov_labs\oop_2k2sem\lab4\lab2\obj\Debug\lab2.exe
 E:\читы\drugov_labs\oop_2k2sem\lab4\lab2\obj\Debug\lab2.pdb
+E:\kyrs2\2sem\oop\lab4\lab2\bin\Debug\lab2.exe.config
+E:\kyrs2\2sem\oop\lab4\lab2\bin\Debug\lab2.exe
+E:\kyrs2\2sem\oop\lab4\lab2\bin\Debug\lab2.pdb
+E:\kyrs2\2sem\oop\lab4\lab2\obj\Debug\lab2.csprojAssemblyReference.cache
+E:\kyrs2\2sem\oop\lab4\lab2\obj\Debug\lab2.District.resources
+E:\kyrs2\2sem\oop\lab4\lab2\obj\Debug\lab2.FlatForm.resources
+E:\kyrs2\2sem\oop\lab4\lab2\obj\Debug\lab2.Properties.Resources.resources
+E:\kyrs2\2sem\oop\lab4\lab2\obj\Debug\lab2.SearchForm.resources
+E:\kyrs2\2sem\oop\lab4\lab2\obj\Debug\lab2.csproj.GenerateResource.cache
+E:\kyrs2\2sem\oop\lab4\lab2\obj\Debug\lab2.csproj.CoreCompileInputs.cache
+E:\kyrs2\2sem\oop\lab4\lab2\obj\Debug\lab2.exe
+E:\kyrs2\2sem\oop\lab4\lab2\obj\Debug\lab2.pdb
