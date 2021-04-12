@@ -7,8 +7,9 @@
         xmlns:viewmodels="clr-namespace:lab6_7.ViewsModels"
         xmlns:views="clr-namespace:lab6_7.Views"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" 
-        Width="800"
+        Title="MainWindow" 
+        Height="450" MinHeight="450"
+        Width="900" MinWidth="900"
         WindowStartupLocation="CenterScreen"
         Background="#eff2f3"
         WindowStyle="None">
@@ -47,7 +48,9 @@
                        VerticalAlignment="Center"
                        FontSize="21"
                        FontWeight="Bold"
-                       Foreground="#0e88df">
+                       Foreground="#0e88df"
+                       Cursor="Hand"
+                       MouseDown="HomeClick">
 
             </TextBlock>
 
@@ -74,7 +77,7 @@
                     Content="Add Item"
                     Grid.Row="1"
                     FontSize="16"
-                    MouseDown="AddItem">
+                    Click="AddItem" Height="50" VerticalAlignment="Top">
                 <Button.Style>
                     <Style TargetType="Button">
                         <Setter Property="TextElement.FontFamily" Value="Fonts/#museo"></Setter>
@@ -129,6 +132,36 @@
 
         </Grid>
 
+        <Grid Grid.Row="1"
+              Grid.Column="1"
+              Grid.ColumnSpan="2">
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="80"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <Label Content="We glad to see you"
+                   HorizontalAlignment="Right"
+                   VerticalAlignment="Bottom"
+                   FontSize="38" FontFamily="Bauhaus 93"
+                   Foreground="#0e88df">
+                
+            </Label>
+
+
+        </Grid>
+        
+        <Image Source="images/car.png"
+               Grid.Column="2"
+               Grid.Row="1"
+               Width="250"
+               Height="250"
+               VerticalAlignment="Bottom">
+                
+       </Image>
+        
+        
         <Grid Background="#fff"
               Grid.Row="2"
               Grid.ColumnSpan="3">
@@ -154,6 +187,7 @@
                        Foreground="#0e88df">
 
             </TextBlock>
+
 
         </Grid>
 

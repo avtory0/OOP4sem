@@ -58,10 +58,17 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="AddItems.xaml.cs">
+      <DependentUpon>AddItems.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ViewsModels\ItemListsModels.cs" />
     <Compile Include="Views\ItemLists.xaml.cs">
       <DependentUpon>ItemLists.xaml</DependentUpon>
     </Compile>
+    <Page Include="AddItems.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -111,6 +118,8 @@
   <ItemGroup>
     <Resource Include="images\off-button.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="images\car.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

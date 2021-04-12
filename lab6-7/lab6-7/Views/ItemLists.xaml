@@ -5,110 +5,73 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:lab6_7.Views"
              mc:Ignorable="d" 
-             d:DesignHeight="360" d:DesignWidth="700">
-    <Grid Background="#eff2f3">
-
+             Height="360" Width="800" >
+    <Grid Name="Toolbar" Background="#eff2f3">
         <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200"/>
             <ColumnDefinition/>
-            <ColumnDefinition Width="150"/>
         </Grid.ColumnDefinitions>
 
-        <Grid Grid.Column="1" >
-            <Grid.RowDefinitions>
-                <RowDefinition/>
-                <RowDefinition Height="40"/>
-                <RowDefinition Height="40"/>
-                <RowDefinition Height="40"/>
-            </Grid.RowDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <ListView
+            ItemsSource="{Binding items}"
+            x:Name="ListView"
+            Grid.Column="1"
+            Grid.RowSpan="6">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Width="100" Header="Name">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding NameItem}" TextWrapping="Wrap" FontSize="16" Foreground="#99aab5" Margin="10,0,0,0"></TextBlock>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+
+                    <GridViewColumn Width="110" Header="Category">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding Category}" FontSize="16" TextWrapping="Wrap" Foreground="#99aab5" Margin="10,0,0,0" ></TextBlock>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+
+                    <GridViewColumn Width="110" Header="Price">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding Price}" FontSize="16" TextWrapping="Wrap" Foreground="#99aab5" Margin="10,0,0,0" ></TextBlock>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+
+                    <GridViewColumn Width="110" Header="State">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding IsAvailable}" FontSize="16" TextWrapping="Wrap" Foreground="#99aab5" Margin="10,0,0,0" ></TextBlock>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    
+                    <GridViewColumn Width="110" Header="Photo">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding PicturePath}" FontSize="16" TextWrapping="Wrap" Foreground="#99aab5" Margin="10,0,0,0" ></TextBlock>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+
+                </GridView>
+            </ListView.View>
             
-            <Button x:Name="SearchItems"
-                    Content="Search Items"
-                    Grid.Row="1"
-                    FontSize="16">
-                <Button.Style>
-                    <Style TargetType="Button">
-                        <Setter Property="TextElement.FontFamily" Value="Fonts/#museo"></Setter>
-                        <Setter Property="Cursor" Value="Hand"></Setter>
-                        <Setter Property="Foreground" Value="#fff"></Setter>
-                        <Setter Property="Background" Value="#0e88df"></Setter>
-                        <Setter Property="BorderBrush" Value="#fff"></Setter>
-                        <Style.Triggers>
-                            <Trigger Property="IsMouseOver" Value="True">
-                                <Setter Property="Background" Value="#fff"></Setter>
-                                <Setter Property="Foreground" Value="#0e88df"></Setter>
-                                <Setter Property="BorderBrush" Value="#0e88df"></Setter>
-                            </Trigger>
-                        </Style.Triggers>
-                    </Style>
-                </Button.Style>
-                <Button.Template>
-                    <ControlTemplate TargetType="Button">
-                        <Border Background="{TemplateBinding Background}" >
-                            <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center"></ContentPresenter>
-                        </Border>
-                    </ControlTemplate>
-                </Button.Template>
-            </Button>
-
-            <Button x:Name="EditItems"
-                    Content="Edit Items"
-                    Grid.Row="2"
-                    FontSize="16">
-                <Button.Style>
-                    <Style TargetType="Button">
-                        <Setter Property="TextElement.FontFamily" Value="Fonts/#museo"></Setter>
-                        <Setter Property="Cursor" Value="Hand"></Setter>
-                        <Setter Property="Foreground" Value="#fff"></Setter>
-                        <Setter Property="Background" Value="#0e88df"></Setter>
-                        <Setter Property="BorderBrush" Value="#fff"></Setter>
-                        <Style.Triggers>
-                            <Trigger Property="IsMouseOver" Value="True">
-                                <Setter Property="Background" Value="#fff"></Setter>
-                                <Setter Property="Foreground" Value="#0e88df"></Setter>
-                                <Setter Property="BorderBrush" Value="#0e88df"></Setter>
-                            </Trigger>
-                        </Style.Triggers>
-                    </Style>
-                </Button.Style>
-                <Button.Template>
-                    <ControlTemplate TargetType="Button">
-                        <Border Background="{TemplateBinding Background}" >
-                            <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center"></ContentPresenter>
-                        </Border>
-                    </ControlTemplate>
-                </Button.Template>
-            </Button>
-
-            <Button x:Name="DeleteItems"
-                    Content="Delete Items"
-                    Grid.Row="3"
-                    FontSize="16">
-                <Button.Style>
-                    <Style TargetType="Button">
-                        <Setter Property="TextElement.FontFamily" Value="Fonts/#museo"></Setter>
-                        <Setter Property="Cursor" Value="Hand"></Setter>
-                        <Setter Property="Foreground" Value="#fff"></Setter>
-                        <Setter Property="Background" Value="#0e88df"></Setter>
-                        <Setter Property="BorderBrush" Value="#fff"></Setter>
-                        <Style.Triggers>
-                            <Trigger Property="IsMouseOver" Value="True">
-                                <Setter Property="Background" Value="#fff"></Setter>
-                                <Setter Property="Foreground" Value="#0e88df"></Setter>
-                                <Setter Property="BorderBrush" Value="#0e88df"></Setter>
-                            </Trigger>
-                        </Style.Triggers>
-                    </Style>
-                </Button.Style>
-                <Button.Template>
-                    <ControlTemplate TargetType="Button">
-                        <Border Background="{TemplateBinding Background}" >
-                            <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center"></ContentPresenter>
-                        </Border>
-                    </ControlTemplate>
-                </Button.Template>
-            </Button>
-
-        </Grid>
+        </ListView>
     </Grid>
     
 </UserControl>

@@ -24,6 +24,7 @@ namespace lab6_7
         public MainWindow()
         {
             InitializeComponent();
+
         }
 
         private void Grid_MouseDown(object sender, MouseButtonEventArgs e)
@@ -32,11 +33,6 @@ namespace lab6_7
             {
                 DragMove();
             }
-        }
-
-        private void AddItem(object sender, MouseButtonEventArgs e)
-        {
-
         }
 
         private void CloseApp(object sender, MouseButtonEventArgs e)
@@ -48,6 +44,19 @@ namespace lab6_7
         private void Show_Click(object sender, RoutedEventArgs e)
         {
             DataContext = new ItemListsModels();
+        }
+
+        private void AddItem(object sender, RoutedEventArgs e)
+        {
+            AddItems AddWindow = new AddItems();
+            AddWindow.Owner = this;
+            AddWindow.ShowDialog();
+        }
+
+        private void HomeClick(object sender, MouseButtonEventArgs e)
+        {
+            MainWindow mainWindow = new MainWindow();
+            mainWindow.ShowDialog();
         }
     }
 }
