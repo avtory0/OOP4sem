@@ -9,6 +9,8 @@ using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
+using System.Globalization;
+using System.Collections.ObjectModel;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
@@ -24,7 +26,24 @@ namespace lab6_7
         public MainWindow()
         {
             InitializeComponent();
+            App.LanguageChanged += LanguageChanged;
+            CultureInfo currLang = App.Language;
+        }
+        private void LanguageChanged(Object sender, EventArgs e)
+        {
+            CultureInfo currLang = App.Language;
 
+        }
+        private void ButtonRu_Click(object sender, RoutedEventArgs e)
+        {
+            CultureInfo lang = new CultureInfo("ru-RU");
+            App.Language = lang;
+        }
+
+        private void ButtonEng_Click(object sender, RoutedEventArgs e)
+        {
+            CultureInfo lang = new CultureInfo("en-US");
+            App.Language = lang;
         }
 
         private void Grid_MouseDown(object sender, MouseButtonEventArgs e)
@@ -37,26 +56,25 @@ namespace lab6_7
 
         private void CloseApp(object sender, MouseButtonEventArgs e)
         {
-            this.Close();
+            Application.Current.Shutdown();
+
         }
 
 
         private void Show_Click(object sender, RoutedEventArgs e)
         {
-            DataContext = new ItemListsModels();
+            OutputWindow outputWindow = new OutputWindow();
+            outputWindow.Show();
+            this.Hide();
         }
 
         private void AddItem(object sender, RoutedEventArgs e)
         {
             AddItems AddWindow = new AddItems();
-            AddWindow.Owner = this;
+
             AddWindow.ShowDialog();
         }
 
-        private void HomeClick(object sender, MouseButtonEventArgs e)
-        {
-            MainWindow mainWindow = new MainWindow();
-            mainWindow.ShowDialog();
-        }
+       
     }
 }

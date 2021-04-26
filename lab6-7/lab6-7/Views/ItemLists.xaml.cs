@@ -1,19 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Globalization;
-using System.Linq;
-using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 using static lab6_7.AddItems;
 
 
@@ -24,43 +15,87 @@ namespace lab6_7.Views
     /// </summary>
     public partial class ItemLists : UserControl
     {
-        ObservableCollection<Cars> cars = new ObservableCollection<Cars>();
+        CarsList carslist = new CarsList();
+        ObservableCollection<Cars> items = new ObservableCollection<Cars>();
+        FoodListHistory history = new FoodListHistory();
         public ItemLists()
         {
             InitializeComponent();
 
-            cars = XmlSerializeWrapper.Deserialize<ObservableCollection<Cars>>("cars.xml");
-            ListView.ItemsSource = cars;
+            carslist = Serializer.MyXMLDeserializer();
+            ListView.ItemsSource = carslist.list;
         }
 
-        //private void Toolbar(object sender, MouseButtonEventArgs e)
+        private void TextBoxMinPrice_KeyDown(object sender, KeyEventArgs e)
+        {
+            string Symbol = e.Key.ToString();
+            if (!Regex.Match(Symbol, @"[0-9]").Success && e.Key != Key.Back && e.Key != Key.OemPeriod && e.Key != Key.OemComma)
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void TextBoxMaxPrice_KeyDown(object sender, KeyEventArgs e)
+        {
+            string Symbol = e.Key.ToString();
+            if (!Regex.Match(Symbol, @"[0-9]").Success && e.Key != Key.Back && e.Key != Key.OemPeriod && e.Key != Key.OemComma)
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void Accept_Click(object sender, RoutedEventArgs e)
+        {
+            carslist = Serializer.MyXMLDeserializer();
+            CarsList foodTempList = new CarsList();
+            foreach (Cars food in carslist.list)
+            {
+                string pattern1 = @"^" + serchBox.Text + @"\w*";
+                if (food.NameItem == serchBox.Text)
+                {
+                    foodTempList.list.Add(food);
+                }
+                else if (Regex.IsMatch(food.NameItem, pattern1))
+                {
+                    foodTempList.list.Add(food);
+                }
+            }
+            ListView.ItemsSource = foodTempList.list;
+        }
+
+        private void ShowAll_click(object sender, RoutedEventArgs e)
+        {
+            serchBox.Text = string.Empty;
+            carslist = Serializer.MyXMLDeserializer();
+            ListView.ItemsSource = carslist.list;
+        }
+
+        private void ButtonDeleteitems_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            int counter = 0;
+            foreach (Cars cars in carslist.list)
+            {
+                if (counter == ListView.SelectedIndex)
+                {
+                    items.RemoveAt(counter);
+                    Serializer.MyXMLSerializer(carslist);
+                    MessageBox.Show($"Товар {cars.NameItem} удалён!");
+                    break;
+                }
+                counter++;
+            }
+            ListView.ItemsSource = carslist.list;
+        }
+
+        //private void ButtonChange_Click(object sender, RoutedEventArgs e)
         //{
-        //    carslist = Serializer.MyXMLDeserializer();
-        //    AllItems.ItemsSource = carslist.list;
+        //    EditWindow window = new EditWindow(items, ListView.SelectedIndex);
+        //    window.Show();
         //}
 
-
-        //private void LastItemInfo()
-        //{
-        //     carslist = Serializer.MyXMLDeserializer();
-        //     lastGoodImg.Source = new BitmapImage(new Uri(carslist.Last().photo, UriKind.Absolute));
-        //     ItemName.Text = carslist.Last().name;
-        //     IteamDesc.Text = foodList.Last().description;
-        //     ItemPrice.Text = String.Format("{0:F2} руб", foodList.Last().price);
-            
-        //}
-
-        //private void ShowAll_Click(object sender, RoutedEventArgs e)
-        //{
-        //    carslist = Serializer.MyXMLDeserializer();
-        //    AllItems.ItemsSource = carslist.list;
-        //}
-
-        //private void DeleteItems_Click(object sender, RoutedEventArgs e)
-        //{
-        //    carslist.list.Remove((Cars)AllItems.SelectedItem);
-        //    Serializer.MyXMLSerializer(carslist);
-        //    //LastItemInfo();
-        //}
+        public static implicit operator Window(ItemLists v)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

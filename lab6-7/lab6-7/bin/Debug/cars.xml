@@ -1,10 +1,13 @@
 <?xml version="1.0"?>
-<ArrayOfCars xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <Cars>
-    <name_of_cars>пвап</name_of_cars>
-    <category_of_cars>Рatchback</category_of_cars>
-    <price_of_cars>54</price_of_cars>
-    <is_alailable>New</is_alailable>
-    <path_of_picture>file:///C:/Users/easyp/OneDrive/Изображения/ieroglify_nadpis_slova_185315_2560x1440.jpg</path_of_picture>
-  </Cars>
-</ArrayOfCars>
+<CarsList xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Collection>
+    <Item>
+      <name_of_cars>audi</name_of_cars>
+      <category_of_cars>Рatchback</category_of_cars>
+      <price_of_cars>4534</price_of_cars>
+      <is_alailable>New</is_alailable>
+      <path_of_picture>C:\Users\easyp\OneDrive\Изображения\ieroglify_nadpis_slova_185315_2560x1440.jpg</path_of_picture>
+    </Item>
+  </Collection>
+  <tempList />
+</CarsList>

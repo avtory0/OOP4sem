@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 E:\kyrs2\2sem\oop\lab6-7\lab6-7\App.xaml
-3-1356296871
+7-504507712
 
-10-736481866
+122001948113
 13-1505183044
-AddItems.xaml;MainWindow.xaml;Views\ItemLists.xaml;
+AddItems.xaml;EditWindow.xaml;MainWindow.xaml;OutputWindow.xaml;Resources\lang.xaml;Resources\lang.ru-RU.xaml;Views\ItemLists.xaml;
 
-False
+True
 
