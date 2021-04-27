@@ -15,12 +15,12 @@
         WindowStyle="None">
 
     <Window.Resources>
-        <DataTemplate x:Name="ItemListsTemplate" DataType="{x:Type viewmodels:ItemListsModels}">
-            <views:ItemLists DataContext="{Binding}"></views:ItemLists>
-        </DataTemplate>
+        <Cursor x:Key="UserCursor">E:\kyrs2\2sem\oop\lab6-7\lab6-7\images\alternate.cur</Cursor>
+        <Cursor x:Key="LinkCursor">E:\kyrs2\2sem\oop\lab6-7\lab6-7\images\link.cur</Cursor>
+        
     </Window.Resources>
 
-    <Grid>
+    <Grid Cursor="{StaticResource UserCursor}">
         <Grid.RowDefinitions>
             <RowDefinition Height="40"/>
             <RowDefinition/>
@@ -49,14 +49,14 @@
                        FontSize="21"
                        FontWeight="Bold"
                        Foreground="#0e88df"
-                       Cursor="Hand">
+                       Cursor="{StaticResource LinkCursor}">
 
             </TextBlock>
 
             <Image Grid.Column="2"
                    Source="images/off-button.png"
                    Width="30" Height="30"
-                   Cursor="Hand"
+                   Cursor="{StaticResource LinkCursor}"
                    MouseDown="CloseApp">
 
             </Image>
@@ -77,11 +77,11 @@
                     Content="{DynamicResource Add}"
                     Grid.Row="1"
                     FontSize="16"
+                    Cursor="{StaticResource LinkCursor}"
                     Click="AddItem" Height="50" VerticalAlignment="Top">
                 <Button.Style>
                     <Style TargetType="Button">
                         <Setter Property="TextElement.FontFamily" Value="Fonts/#museo"></Setter>
-                        <Setter Property="Cursor" Value="Hand"></Setter>
                         <Setter Property="Foreground" Value="#fff"></Setter>
                         <Setter Property="Background" Value="Transparent"></Setter>
                         <Style.Triggers>
@@ -104,11 +104,11 @@
             <Button x:Name="ShowItems"
                     Content="{DynamicResource Show}"
                     Grid.Row="2"
+                    Cursor="{StaticResource LinkCursor}"
                     FontSize="16" Click="Show_Click">
                 <Button.Style>
                     <Style TargetType="Button">
                         <Setter Property="TextElement.FontFamily" Value="Fonts/#museo"></Setter>
-                        <Setter Property="Cursor" Value="Hand"></Setter>
                         <Setter Property="Foreground" Value="#fff"></Setter>
                         <Setter Property="Background" Value="Transparent"></Setter>
                         <Setter Property="BorderBrush" Value="#fff"></Setter>
@@ -130,11 +130,11 @@
                 </Button.Template>
             </Button>
             <StackPanel Grid.Row="3" Orientation="Horizontal">
-                <Button x:Name="ButtonRu" Height="40" Width="40" Margin="5 0 0 0" Background="Transparent" Cursor="Hand" Click="ButtonRu_Click" Tag="ru-RU">
+                <Button x:Name="ButtonRu" Height="40" Width="40" Margin="5 0 0 0" Background="Transparent" Cursor="{StaticResource LinkCursor}" Click="ButtonRu_Click" Tag="ru-RU">
                     <Image Source="images/russia.png"/>
                 </Button>
 
-                <Button x:Name="ButtonEng" Height="40" Width="40" Margin="10 0 0 0" Background="Transparent" Cursor="Hand" Click="ButtonEng_Click" Tag="en-US">
+                <Button x:Name="ButtonEng" Height="40" Width="40" Margin="10 0 0 0" Background="Transparent" Cursor="{StaticResource LinkCursor}" Click="ButtonEng_Click" Tag="en-US">
                     <Image Source="images/usa.png"/>
                 </Button>
             </StackPanel>
@@ -143,7 +143,8 @@
 
         <Grid Grid.Row="1"
               Grid.Column="1"
-              Grid.ColumnSpan="2">
+              Grid.ColumnSpan="2"
+              Cursor="{StaticResource UserCursor}">
 
             <Grid.RowDefinitions>
                 <RowDefinition Height="80"/>

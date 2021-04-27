@@ -40,6 +40,23 @@ namespace lab6_7
 
         }
 
+        private void LanguageChanged(Object sender, EventArgs e)
+        {
+            CultureInfo currLang = App.Language;
+
+        }
+        private void ButtonRu_Click(object sender, RoutedEventArgs e)
+        {
+            CultureInfo lang = new CultureInfo("ru-RU");
+            App.Language = lang;
+        }
+
+        private void ButtonEng_Click(object sender, RoutedEventArgs e)
+        {
+            CultureInfo lang = new CultureInfo("en-US");
+            App.Language = lang;
+        }
+
         private void CloseApp(object sender, MouseButtonEventArgs e)
         {
             Application.Current.Shutdown();

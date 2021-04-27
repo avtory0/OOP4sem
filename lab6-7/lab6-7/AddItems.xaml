@@ -19,9 +19,12 @@
             <Setter Property="Margin" Value="20,20,200,0"></Setter>
             <Setter Property="Width" Value="50"></Setter>
         </Style>
+        <Cursor x:Key="UserCursor">E:\kyrs2\2sem\oop\lab6-7\lab6-7\images\alternate.cur</Cursor>
+        <Cursor x:Key="LinkCursor">E:\kyrs2\2sem\oop\lab6-7\lab6-7\images\link.cur</Cursor>
+
     </Window.Resources>
 
-    <Grid>
+    <Grid Cursor="{StaticResource UserCursor}">
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
             <ColumnDefinition/>

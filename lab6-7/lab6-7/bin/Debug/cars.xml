@@ -3,10 +3,31 @@
   <Collection>
     <Item>
       <name_of_cars>audi</name_of_cars>
-      <category_of_cars>Рatchback</category_of_cars>
-      <price_of_cars>4534</price_of_cars>
+      <category_of_cars>SUV</category_of_cars>
+      <price_of_cars>6743</price_of_cars>
+      <is_alailable>Used</is_alailable>
+      <path_of_picture>file:///C:/Users/easyp/OneDrive/Изображения/audi-a8-with-predictive-active-suspension.jpg</path_of_picture>
+    </Item>
+    <Item>
+      <name_of_cars>tesla</name_of_cars>
+      <category_of_cars>Sedan</category_of_cars>
+      <price_of_cars>7544</price_of_cars>
       <is_alailable>New</is_alailable>
-      <path_of_picture>C:\Users\easyp\OneDrive\Изображения\ieroglify_nadpis_slova_185315_2560x1440.jpg</path_of_picture>
+      <path_of_picture>C:\Users\easyp\OneDrive\Изображения\c48b5fec0b41c83f14e0f7dff2fb39ddfb28f62c_large.jpg</path_of_picture>
+    </Item>
+    <Item>
+      <name_of_cars>bmw</name_of_cars>
+      <category_of_cars>Рatchback</category_of_cars>
+      <price_of_cars>44632</price_of_cars>
+      <is_alailable>New</is_alailable>
+      <path_of_picture>C:\Users\easyp\OneDrive\Изображения\dims_large.jpg</path_of_picture>
+    </Item>
+    <Item>
+      <name_of_cars>mercedes</name_of_cars>
+      <category_of_cars>Coupe</category_of_cars>
+      <price_of_cars>96543</price_of_cars>
+      <is_alailable>Used</is_alailable>
+      <path_of_picture>C:\Users\easyp\OneDrive\Изображения\Mercedes-Maybach_S-Class_2020_2.jpg</path_of_picture>
     </Item>
   </Collection>
   <tempList />
