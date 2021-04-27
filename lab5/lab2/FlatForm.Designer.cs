@@ -144,6 +144,8 @@
             this.toolStripStatusLabelAmount = new System.Windows.Forms.ToolStripStatusLabel();
             this.renovation = new System.Windows.Forms.RadioButton();
             this.noRenovation = new System.Windows.Forms.RadioButton();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.statuslabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.trackBarFootage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownFloor)).BeginInit();
             this.groupBoxAddress.SuspendLayout();
@@ -350,6 +352,7 @@
             // 
             // groupBoxAddress
             // 
+            this.groupBoxAddress.Controls.Add(this.statuslabel);
             this.groupBoxAddress.Controls.Add(this.textBoxIndex);
             this.groupBoxAddress.Controls.Add(this.labelIndex);
             this.groupBoxAddress.Controls.Add(this.comboBoxDistrict);
@@ -595,7 +598,7 @@
             // 
             this.textBoxFlatInfo.BackColor = System.Drawing.Color.LightYellow;
             this.textBoxFlatInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.textBoxFlatInfo.Location = new System.Drawing.Point(283, 392);
+            this.textBoxFlatInfo.Location = new System.Drawing.Point(282, 392);
             this.textBoxFlatInfo.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxFlatInfo.Multiline = true;
             this.textBoxFlatInfo.Name = "textBoxFlatInfo";
@@ -608,7 +611,7 @@
             // 
             this.buttonClearInfo.BackColor = System.Drawing.Color.Coral;
             this.buttonClearInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.buttonClearInfo.Location = new System.Drawing.Point(66, 654);
+            this.buttonClearInfo.Location = new System.Drawing.Point(64, 672);
             this.buttonClearInfo.Margin = new System.Windows.Forms.Padding(2);
             this.buttonClearInfo.Name = "buttonClearInfo";
             this.buttonClearInfo.Size = new System.Drawing.Size(108, 46);
@@ -621,7 +624,7 @@
             // 
             this.buttonSave.BackColor = System.Drawing.Color.Coral;
             this.buttonSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.buttonSave.Location = new System.Drawing.Point(340, 654);
+            this.buttonSave.Location = new System.Drawing.Point(338, 672);
             this.buttonSave.Margin = new System.Windows.Forms.Padding(2);
             this.buttonSave.Name = "buttonSave";
             this.buttonSave.Size = new System.Drawing.Size(148, 45);
@@ -634,7 +637,7 @@
             // 
             this.labelCostFlat.AutoSize = true;
             this.labelCostFlat.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.labelCostFlat.Location = new System.Drawing.Point(64, 596);
+            this.labelCostFlat.Location = new System.Drawing.Point(62, 614);
             this.labelCostFlat.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelCostFlat.Name = "labelCostFlat";
             this.labelCostFlat.Size = new System.Drawing.Size(170, 20);
@@ -645,7 +648,7 @@
             // 
             this.textBoxCost.BackColor = System.Drawing.Color.LightYellow;
             this.textBoxCost.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.textBoxCost.Location = new System.Drawing.Point(66, 619);
+            this.textBoxCost.Location = new System.Drawing.Point(64, 637);
             this.textBoxCost.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxCost.Name = "textBoxCost";
             this.textBoxCost.ReadOnly = true;
@@ -656,7 +659,7 @@
             // 
             this.buttonAutoFill.BackColor = System.Drawing.Color.Coral;
             this.buttonAutoFill.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.buttonAutoFill.Location = new System.Drawing.Point(178, 654);
+            this.buttonAutoFill.Location = new System.Drawing.Point(176, 672);
             this.buttonAutoFill.Margin = new System.Windows.Forms.Padding(2);
             this.buttonAutoFill.Name = "buttonAutoFill";
             this.buttonAutoFill.Size = new System.Drawing.Size(158, 46);
@@ -670,7 +673,7 @@
             this.labelBucks.AutoSize = true;
             this.labelBucks.BackColor = System.Drawing.Color.Transparent;
             this.labelBucks.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.labelBucks.Location = new System.Drawing.Point(146, 620);
+            this.labelBucks.Location = new System.Drawing.Point(144, 638);
             this.labelBucks.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelBucks.Name = "labelBucks";
             this.labelBucks.Size = new System.Drawing.Size(18, 20);
@@ -1030,6 +1033,29 @@
             this.noRenovation.TabStop = true;
             this.noRenovation.Text = "Без отделки";
             this.noRenovation.UseVisualStyleBackColor = true;
+            this.noRenovation.CheckedChanged += new System.EventHandler(this.noRenovation_CheckedChanged);
+            // 
+            // radioButton1
+            // 
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.radioButton1.Location = new System.Drawing.Point(50, 592);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(95, 19);
+            this.radioButton1.TabIndex = 45;
+            this.radioButton1.TabStop = true;
+            this.radioButton1.Text = "На ремонте";
+            this.radioButton1.UseVisualStyleBackColor = true;
+            this.radioButton1.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
+            // 
+            // statuslabel
+            // 
+            this.statuslabel.AutoSize = true;
+            this.statuslabel.Location = new System.Drawing.Point(225, 180);
+            this.statuslabel.Name = "statuslabel";
+            this.statuslabel.Size = new System.Drawing.Size(91, 20);
+            this.statuslabel.TabIndex = 35;
+            this.statuslabel.Text = "Состояние";
             // 
             // FlatForm
             // 
@@ -1037,6 +1063,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.MistyRose;
             this.ClientSize = new System.Drawing.Size(1021, 757);
+            this.Controls.Add(this.radioButton1);
             this.Controls.Add(this.noRenovation);
             this.Controls.Add(this.renovation);
             this.Controls.Add(this.statusStrip1);
@@ -1170,6 +1197,8 @@
         private System.Windows.Forms.ToolStripMenuItem фокусToolStripMenuItem;
         private System.Windows.Forms.RadioButton renovation;
         private System.Windows.Forms.RadioButton noRenovation;
+        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.Label statuslabel;
     }
 }
 

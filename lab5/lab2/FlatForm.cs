@@ -29,6 +29,7 @@ namespace lab2
         int amountObjects = 0;
         List<Flat> flats = new List<Flat>();
         Flat objflat = new Flat();
+        Flat myFlat = new Flat();
         public FlatForm()
         {
             InitializeComponent();
@@ -113,6 +114,7 @@ namespace lab2
 
         private void buttonAutoFill_Click(object sender, EventArgs e)
         {
+            
             double footage = 58;
             int amountOfRooms = 3;
             int year = 1865;
@@ -155,6 +157,9 @@ namespace lab2
             textBoxStreet.ReadOnly = false;
             textBoxNumberFlat.ReadOnly = false;
             textBoxNumberHouse.ReadOnly = false;
+
+            myFlat = new HomeFlat(myFlat);
+            MessageBox.Show(myFlat.FlatName);
             toolStripStatusLabelAction.Text = "Автозаполнение";
         }
 
@@ -490,6 +495,18 @@ namespace lab2
             ToolStripMenuItemSearchResult_Click(this, e);
         }
 
+        private void noRenovation_CheckedChanged(object sender, EventArgs e)
+        {
+            statuslabel.Text = FlatState.norenovation.ToString();
+        }
+
+       
+
+        private void radioButton1_CheckedChanged(object sender, EventArgs e)
+        {
+            statuslabel.Text = FlatState.repairing.ToString();
+        }
+
         private void toolStripButtonAbout_Click(object sender, EventArgs e)
         {
             toolStripMenuItemSave_Click(this, e);
@@ -526,6 +543,7 @@ namespace lab2
                 AbstrFactory renovationFactory = new RenovationFactory();
                 var feature = renovationFactory.setProperty();
                 objflat.Property = feature.Property;
+                statuslabel.Text = FlatState.renovation.ToString();
             }
         }
     }

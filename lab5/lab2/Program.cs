@@ -83,35 +83,26 @@ namespace lab2
     }
 
     //паттерн Adapter
-    class C
+   
+
+   
+    abstract class FlatDecorator : Flat //decorator
     {
-        public void Request(Target target)
+        protected Flat flat;
+        public FlatDecorator(string flatName, Flat flat) : base(flatName)
         {
-            target.Request();
+            this.flat = flat;
         }
+
     }
 
-    class Target
+    class HomeFlat : FlatDecorator
     {
-        public virtual void Request()
-        { }
+        public HomeFlat(Flat flat) : base("Домашний адрес", flat) { }
     }
 
-    class Adapter : Target
-    {
-        private Adaptee adaptee = new Adaptee();
+   
 
-        public override void Request()
-        {
-            adaptee.SpecificRequest();
-        }
-    }
-
-    class Adaptee
-    {
-        public void SpecificRequest()
-        { }
-    }
 
     public interface IOperations
     {
@@ -123,6 +114,12 @@ namespace lab2
         searchYear = 0,
         searchDistrict,
         searchRooms
+    }
+    public enum FlatState
+    {
+        renovation = 0,
+        norenovation,
+        repairing
     }
 
     [Serializable]
@@ -146,7 +143,31 @@ namespace lab2
             Property = property;
             this.address = address;
         }
+        public Flat(double footage, int amounOfRooms, int year, string material, int floor, bool kitchen,
+            bool balcony, bool basement, bool livingRoom, bool bathroom, string property, FlatState flatState, Address address)
+        {
+            Footage = footage;
+            AmountOfRooms = amounOfRooms;
+            Year = year;
+            Material = material;
+            Floor = floor;
+            Kitchen = kitchen;
+            Balcony = balcony;
+            Basement = basement;
+            LivingRoom = livingRoom;
+            Bathroom = bathroom;
+            Property = property;
+            this.address = address;
+            this.flatState = flatState;
+        }
 
+
+        public Flat(string flatName)
+        {
+            FlatName = flatName;
+        }
+        [XmlElement(ElementName = "flat_state")]
+        public FlatState flatState { get; set; }
         public Flat() { }
         [XmlElement(ElementName = "footage")]
         [Required]
@@ -155,6 +176,8 @@ namespace lab2
         [Required(AllowEmptyStrings = true)]
         [XmlElement(ElementName = "amount_of_rooms")]
         [RegularExpression(@"\d+",ErrorMessage = "Неверно введено кол-во комнат")]
+        [XmlElement(ElementName = "address_name")]
+        public string FlatName { get; set; }
         public int AmountOfRooms { get; set; }
         [XmlElement(ElementName = "kitchen")]
         public bool Kitchen { get; set; }
@@ -302,6 +325,8 @@ namespace lab2
         }
     }
 
+    
+
     [Serializable]
     public class Address
     {
@@ -314,6 +339,9 @@ namespace lab2
             HouseNumber = houseNumber;
             FlatNumber = flatNumber;
         }
+
+        
+
         public string Country { get; set; } = "none";
         [XmlElement(ElementName = "District")]
         public string District { get; set; } = "none";
