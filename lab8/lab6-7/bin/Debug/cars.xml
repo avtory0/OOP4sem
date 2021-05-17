@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<CarsList xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Collection>
+    <Item>
+      <name_of_cars>audi</name_of_cars>
+      <category_of_cars>SUV</category_of_cars>
+      <price_of_cars>6743</price_of_cars>
+      <is_alailable>Used</is_alailable>
+      <path_of_picture>file:///C:/Users/easyp/OneDrive/Изображения/audi-a8-with-predictive-active-suspension.jpg</path_of_picture>
+    </Item>
+    <Item>
+      <name_of_cars>tesla</name_of_cars>
+      <category_of_cars>Sedan</category_of_cars>
+      <price_of_cars>7544</price_of_cars>
+      <is_alailable>New</is_alailable>
+      <path_of_picture>C:\Users\easyp\OneDrive\Изображения\c48b5fec0b41c83f14e0f7dff2fb39ddfb28f62c_large.jpg</path_of_picture>
+    </Item>
+    <Item>
+      <name_of_cars>bmw</name_of_cars>
+      <category_of_cars>Рatchback</category_of_cars>
+      <price_of_cars>44632</price_of_cars>
+      <is_alailable>New</is_alailable>
+      <path_of_picture>C:\Users\easyp\OneDrive\Изображения\dims_large.jpg</path_of_picture>
+    </Item>
+    <Item>
+      <name_of_cars>рпав</name_of_cars>
+      <category_of_cars>Convertible </category_of_cars>
+      <price_of_cars>432</price_of_cars>
+      <is_alailable>New</is_alailable>
+      <path_of_picture>file:///C:/Users/easyp/OneDrive/Изображения/dims_large.jpg</path_of_picture>
+    </Item>
+  </Collection>
+  <tempList />
+</CarsList>

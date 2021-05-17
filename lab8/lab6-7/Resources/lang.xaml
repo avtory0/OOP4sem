@@ -1,0 +1,28 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:v="clr-namespace:System;assembly=mscorlib">
+    <v:String x:Key="Add">Add item</v:String>
+    <v:String x:Key="Show">Show all</v:String>
+    <v:String x:Key="Title">We glad to see you</v:String>
+    <v:String x:Key="Name">Name</v:String>
+    <v:String x:Key="Price">Price ($)</v:String>
+    <v:String x:Key="Category">Category</v:String>
+    <v:String x:Key="State">State</v:String>
+    <v:String x:Key="New">New</v:String>
+    <v:String x:Key="Used">Used</v:String>
+    <v:String x:Key="Description">Description</v:String>
+    <v:String x:Key="Photo">Upload a photo</v:String>
+    <v:String x:Key="ChoseFile">Chose file</v:String>
+    <v:String x:Key="Save">Save</v:String>
+    <v:String x:Key="Clear">Clear</v:String>
+    <v:String x:Key="ListPhoto">Photo</v:String>
+    <v:String x:Key="Search">Search</v:String>
+    <v:String x:Key="Change">Change Items</v:String>
+    <v:String x:Key="Delete">Delete Items</v:String>
+    <v:String x:Key="ShowAll">Show All</v:String>
+    <v:String x:Key="ThemeColor">Theme color</v:String>
+    <v:String x:Key="LightTheme">Light Theme</v:String>
+    <v:String x:Key="DarkTheme">Dark Themer</v:String>
+    <v:String x:Key="LastAction">Last action</v:String>
+    <v:String x:Key="lab8">Laba 8</v:String>
+</ResourceDictionary>
