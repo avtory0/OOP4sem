@@ -143,7 +143,7 @@
                Grid.RowSpan="3">
         </Image>
 
-        <!--<Label Name="action"
+        <Label Name="action"
                    Grid.Column="1"
                    Grid.Row="6"
                    FontSize="14"
@@ -152,13 +152,13 @@
         </Label>
 
         <StackPanel Grid.Column="1" Grid.Row="7" Grid.RowSpan="2" HorizontalAlignment="Center" Orientation="Horizontal" VerticalAlignment="Center">
-            <Button Height="50" Width="50" Click="ButtonUndo_Click">
+            <Button x:Name="ButtonUndo" Height="50" Width="50" Click="ButtonUndo_Click">
                 <TextBlock Text="undo" FontSize="14"></TextBlock>
             </Button>
-            <Button Height="50" Width="50" Margin="20 0 0 0" Click="ButtonRedo_Click">
+            <Button x:Name="ButtonRedo" Height="50" Width="50" Margin="20 0 0 0" Click="ButtonRedo_Click">
                 <TextBlock Text="redo" FontSize="14"></TextBlock>
             </Button>
-        </StackPanel>-->
+        </StackPanel>
 
         <Label Grid.Row="7" 
                Content="{DynamicResource State}"

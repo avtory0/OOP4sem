@@ -15,6 +15,7 @@ using Microsoft.Win32;
 using System.Text.RegularExpressions;
 using System.Xml.Serialization;
 using System.IO;
+using static lab6_7.AddItems;
 
 
 namespace lab6_7
@@ -24,13 +25,35 @@ namespace lab6_7
     /// </summary>
     public partial class EditWindow : Window
     {
-        List<Cars> item = new List<Cars>();
+        List<Item> items = new List<Item>();
         int numItem = 0;
-        Cars cars = new Cars();
-        CarsList carslist = new CarsList();
-        public EditWindow()
+        public EditWindow(List<Item> items, object numItem)
         {
             InitializeComponent();
+
+            this.items = items;
+            this.numItem = (int)numItem;
+            int counter = 0;
+            foreach (var item in items)
+            {
+                if (counter == this.numItem)
+                {
+                    Name.Text = item.Name;
+                    Price.Text = item.Price.ToString();
+                    Category.Text = item.Category;
+                    if (item.IsAvailable == "New")
+                        RadioButtonNew.IsChecked = true;
+                    else
+                        RadioButtonUsed.IsChecked = true;
+                    BitmapImage image = new BitmapImage();
+                    image.BeginInit();
+                    image.UriSource = new Uri(item.PicturePath);
+                    image.EndInit();
+                    Preview.Source = image;
+                    break;
+                }
+                counter++;
+            }
         }
 
         //public EditWindow(List<Cars> items, object numItem)
@@ -64,37 +87,36 @@ namespace lab6_7
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            //try
-            //{
-            //    int counter = 0;
-            //    foreach (var item in item)
-            //    {
-            //        if (numItem == counter)
-            //        {
-            //            item.NameItem = Name.Text;
-            //            if (Double.TryParse(Price.Text, out double result))
-            //                item.Price = result;
-            //            item.Category = Category.Text;
-            //            item.Description = Description.Text;
-            //            item.PicturePath = Preview.Source.ToString();
-            //            if (RadioButtonNew.IsChecked == true)
-            //                item.IsAvailable = "New";
-            //            if (RadioButtonUsed.IsChecked == true)
-            //                item.IsAvailable = "Used";
-            //            break;
-            //        }
-            //        counter++;
-            //    }
-            //    Serializer.MyXMLSerializer(carslist);
-            //}
-            //catch (Exception)
-            //{
-            //    MessageBox.Show($"Ошибка записи в файл!");
-            //    return;
-            //}
-            //MessageBox.Show("Информация о товаре изменена!");
+            try
+            {
+                int counter = 0;
+                foreach (var item in items)
+                {
+                    if (numItem == counter)
+                    {
+                        item.Name = Name.Text;
+                        item.Category = Category.Text;
+                        if (Double.TryParse(Price.Text, out double result))
+                            item.Price = result;
+                        item.PicturePath = Preview.Source.ToString();
+                        if (RadioButtonNew.IsChecked == true)
+                            item.IsAvailable = TextBlockNew.ToString();
+                        if (RadioButtonUsed.IsChecked == true)
+                            item.IsAvailable = TextBlockUsed.ToString();
+                        break;
+                    }
+                    counter++;
+                }
+                XmlSerializeWrapper.Serialize(items, "cars.xml");
+            }
+            catch (Exception)
+            {
+                MessageBox.Show($"Ошибка записи в файл!");
+                return;
+            }
+            MessageBox.Show("Информация о товаре изменена!");
 
-            //this.Hide();
+            this.Hide();
 
             this.DialogResult = true;
         }
@@ -119,19 +141,23 @@ namespace lab6_7
 
         private void OpenExplore(object sender, RoutedEventArgs e)
         {
-            OpenFileDialog openFileDialog = new OpenFileDialog();
-            openFileDialog.Filter = "Image|*.jpg;*.jpeg;*.png;";
-            if (openFileDialog.ShowDialog() == true)
+            Microsoft.Win32.OpenFileDialog dlg = new Microsoft.Win32.OpenFileDialog();
+            dlg.FileName = ""; // Default file name
+            dlg.DefaultExt = ".png"; // Default file extension
+                                     //    dlg.Filter = "Pictures (.png,jpg)|*.png,*.jpg"; // Filter files by extension
+
+            // Show open file dialog box
+            Nullable<bool> result = dlg.ShowDialog();
+
+            // Process open file dialog box results
+            if (result == true)
             {
-                try
-                {
-                    Preview.Source = new BitmapImage(new Uri(openFileDialog.FileName, UriKind.Absolute));
-                    cars.PicturePath = openFileDialog.FileName;
-                }
-                catch
-                {
-                    MessageBox.Show("Выберите файл формата", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
-                }
+                // Open document
+                BitmapImage image = new BitmapImage();
+                image.BeginInit();
+                image.UriSource = new Uri(dlg.FileName);
+                image.EndInit();
+                Preview.Source = image;
             }
         }
     }

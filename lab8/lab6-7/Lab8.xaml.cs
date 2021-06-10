@@ -23,7 +23,7 @@ namespace lab6_7
         {
             InitializeComponent();
 
-            
+            User_Control1 uc1 = new User_Control1();
         }
 
         private void Grid_MouseDown(object sender, MouseButtonEventArgs e)

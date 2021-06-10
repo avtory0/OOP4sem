@@ -52,3 +52,11 @@ E:\kyrs2\2sem\oop\lab8\lab6-7\obj\Debug\Resources\DarkTheme.baml
 E:\kyrs2\2sem\oop\lab8\lab6-7\obj\Debug\Resources\LightTheme.baml
 E:\kyrs2\2sem\oop\lab8\lab6-7\obj\Debug\Lab8.g.cs
 E:\kyrs2\2sem\oop\lab8\lab6-7\obj\Debug\Lab8.baml
+E:\kyrs2\2sem\oop\lab8\lab6-7\obj\Debug\User_Control1.g.cs
+E:\kyrs2\2sem\oop\lab8\lab6-7\obj\Debug\GeneratedInternalTypeHelper.g.cs
+E:\kyrs2\2sem\oop\lab8\lab6-7\obj\Debug\User_Control1.baml
+E:\kyrs2\2sem\oop\lab8\lab6-7\obj\Debug\Resources\Thema1.baml
+E:\kyrs2\2sem\oop\lab8\lab6-7\obj\Debug\Resources\Thema2.baml
+E:\kyrs2\2sem\oop\lab8\lab6-7\obj\Debug\Resources\Thema3.baml
+E:\kyrs2\2sem\oop\lab8\lab6-7\obj\Debug\User_Control2.g.cs
+E:\kyrs2\2sem\oop\lab8\lab6-7\obj\Debug\User_Control2.baml

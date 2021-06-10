@@ -140,13 +140,13 @@
             <StackPanel Cursor="{StaticResource UserCursor}" Style="{DynamicResource BackgroundStyle}" Grid.RowSpan="7" Grid.ColumnSpan="1">
 
 
-                <TextBlock Text="{DynamicResource Search}" Style="{DynamicResource Text}" Margin="10,10,0,0" Padding="0,0,0,10" FontWeight="DemiBold" FontSize="14"></TextBlock>
+                <!--<TextBlock Text="{DynamicResource Search}" Style="{DynamicResource Text}" Margin="10,10,0,0" Padding="0,0,0,10" FontWeight="DemiBold" FontSize="14"></TextBlock>
                 <TextBox Name="serchBox" FontSize="16" Height="30" Width="200"></TextBox>
                 <WrapPanel Grid.Row="2" HorizontalAlignment="Right" Margin="0,15,15,0">
                     <Button Style="{DynamicResource ButtonsStyle}" Background="#0e88df" Cursor="{StaticResource LinkCursor}" IsDefault="True" Click="Accept_Click" MinWidth="60" Margin="0,0,10,0">
                         <TextBlock Text="{DynamicResource Search}" Style="{DynamicResource Text}"></TextBlock>
                     </Button>
-                </WrapPanel>
+                </WrapPanel>-->
                 <StackPanel Grid.Row="3" Grid.Column="1" Height="30" Margin="0,10,0,0">
                     <Button x:Name="ButtonChange" 
                             Background="#0e88df" 
@@ -184,7 +184,7 @@
                     </Button>
                 </StackPanel>
 
-                <StackPanel Grid.Row="6" Grid.Column="1" Orientation="Vertical">
+                <!--<StackPanel Grid.Row="6" Grid.Column="1" Orientation="Vertical">
                     <TextBlock Style="{DynamicResource Text}" Text="{DynamicResource LastAction}" FontSize="14" FontWeight="Bold" Margin="20,20,0,10"></TextBlock>
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" >
                         <Button Height="50" Width="50" Click="ButtonUndo_Click">
@@ -194,7 +194,7 @@
                             <TextBlock Text="redo" FontSize="14"></TextBlock>
                         </Button>
                     </StackPanel>
-                </StackPanel>
+                </StackPanel>-->
                 <!--<Button  x:Name="ButtonUndo" IsEnabled="False" Background="Transparent" BorderThickness="0" Margin="-80,0,0,0" Width="40" Click="ButtonUndo_Click">
                 </Button>
                 <Button x:Name="ButtonRedo" Background="Transparent" IsEnabled="False" BorderThickness="0" Width="40" Margin="70,-40,0,0" Click="ButtonRedo_Click">
@@ -212,7 +212,7 @@
                         <GridViewColumn Width="100" Header="{DynamicResource Name}">
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
-                                    <TextBlock Text="{Binding NameItem}" TextWrapping="Wrap" FontSize="16" Foreground="#99aab5" Margin="10,0,0,0"></TextBlock>
+                                    <TextBlock Text="{Binding Name}" TextWrapping="Wrap" FontSize="16" Foreground="#99aab5" Margin="10,0,0,0"></TextBlock>
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>

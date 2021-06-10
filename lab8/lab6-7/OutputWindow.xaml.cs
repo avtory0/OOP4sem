@@ -7,6 +7,7 @@ using System.Windows.Input;
 using System.Windows.Media.Imaging;
 using System.Collections.Generic;
 using System.Globalization;
+using static lab6_7.AddItems;
 
 namespace lab6_7
 {
@@ -15,16 +16,15 @@ namespace lab6_7
     /// </summary>
     public partial class OutputWindow : Window
     {
-        List<Cars> item = new List<Cars>();
-        CarsList carslist = new CarsList();
-        ObservableCollection<Cars> items = new ObservableCollection<Cars>();
+        List<Item> item = new List<Item>();
+        ObservableCollection<Item> items = new ObservableCollection<Item>();
         //FoodListHistory history = new FoodListHistory();
         public OutputWindow()
         {
             InitializeComponent();
 
-            carslist = Serializer.MyXMLDeserializer();
-            ListView.ItemsSource = carslist.list;
+            items = XmlSerializeWrapper.Deserialize<ObservableCollection<Item>>("cars.xml");
+            ListView.ItemsSource = items;
             ComboBoxThemes.SelectionChanged += ThemeChange;
 
 
@@ -95,76 +95,86 @@ namespace lab6_7
         }
 
 
-        private void Accept_Click(object sender, RoutedEventArgs e)
-        {
-            carslist = Serializer.MyXMLDeserializer();
-            CarsList foodTempList = new CarsList();
-            foreach (Cars food in carslist.list)
-            {
-                string pattern1 = @"^" + serchBox.Text + @"\w*";
-                if (food.NameItem == serchBox.Text)
-                {
-                    foodTempList.list.Add(food);
-                }
-                else if (Regex.IsMatch(food.NameItem, pattern1))
-                {
-                    foodTempList.list.Add(food);
-                }
-            }
-            ListView.ItemsSource = foodTempList.list;
-        }
+        //private void Accept_Click(object sender, RoutedEventArgs e)
+        //{
+        //    carslist = Serializer.MyXMLDeserializer();
+        //    CarsList foodTempList = new CarsList();
+        //    foreach (Cars food in carslist.list)
+        //    {
+        //        string pattern1 = @"^" + serchBox.Text + @"\w*";
+        //        if (food.NameItem == serchBox.Text)
+        //        {
+        //            foodTempList.list.Add(food);
+        //        }
+        //        else if (Regex.IsMatch(food.NameItem, pattern1))
+        //        {
+        //            foodTempList.list.Add(food);
+        //        }
+        //    }
+        //    ListView.ItemsSource = foodTempList.list;
+        //}
 
-        private void ShowAll_click(object sender, RoutedEventArgs e)
-        {
-            serchBox.Text = string.Empty;
-            carslist = Serializer.MyXMLDeserializer();
-            ListView.ItemsSource = carslist.list;
-        }
+        //private void ShowAll_click(object sender, RoutedEventArgs e)
+        //{
+        //    serchBox.Text = string.Empty;
+        //    carslist = Serializer.MyXMLDeserializer();
+        //    ListView.ItemsSource = carslist.list;
+        //}
 
 
         private void DeleteItem_click(object sender, RoutedEventArgs e)
         {
-            carslist.list.Remove((Cars)ListView.SelectedItem);
-            Serializer.MyXMLSerializer(carslist);
-            MessageBox.Show($"Товар удалён!");
+            int counter = 0;
+            foreach (var item in items)
+            {
+                if (counter == ListView.SelectedIndex)
+                {
+                    items.RemoveAt(counter);
+                    XmlSerializeWrapper.Serialize(items, "cars.xml");
+                    MessageBox.Show($"Товар {item.Name} удалён!");
+                    break;
+                }
+                counter++;
+            }
+            ListView.ItemsSource = items;
         }
 
         private void EditItem_click(object sender, RoutedEventArgs e)
         {
-            //EditWindow editWindow = new EditWindow(item, ListView.SelectedIndex);
-            //editWindow.Show();
+            EditWindow editWindow = new EditWindow(item, ListView.SelectedIndex);
+            editWindow.Show();
 
-            EditWindow editWindow = new EditWindow();
-            editWindow.Owner = this;
-            Cars tempCars = (Cars)ListView.SelectedItem;
-            if (ListView.SelectedItem != null)
-            {
-                if (editWindow.ShowDialog() == true)
-                {
-                    //history.History.Push(foodList.Save());
-                    tempCars = new Cars();
-                    tempCars.NameItem = editWindow.Name.Text;
-                    tempCars.PicturePath = editWindow.Preview.Source.ToString();
-                    tempCars.Price = Math.Abs(float.Parse(editWindow.Price.Text));
-                    tempCars.Description = editWindow.Description.Text;
-                    tempCars.Category = editWindow.Category.SelectedValue.ToString();
-                    if (editWindow.RadioButtonNew.IsChecked == true)
-                        tempCars.IsAvailable = editWindow.TextBlockNew.Text;
-                    if (editWindow.RadioButtonUsed.IsChecked == true)
-                        tempCars.IsAvailable = editWindow.TextBlockUsed.Text;
-                    foreach (Cars food in carslist.list)
-                    {
-                        if (food == (Cars)ListView.SelectedItem)
-                        {
-                            carslist.list[carslist.list.IndexOf(food)] = tempCars;
-                            break;
-                        }
-                    }
-                    Serializer.MyXMLSerializer(carslist);
-                    ListView.ItemsSource = carslist.list;
+            //EditWindow editWindow = new EditWindow();
+            //editWindow.Owner = this;
+            //Cars tempCars = (Cars)ListView.SelectedItem;
+            //if (ListView.SelectedItem != null)
+            //{
+            //    if (editWindow.ShowDialog() == true)
+            //    {
+            //        //history.History.Push(foodList.Save());
+            //        tempCars = new Cars();
+            //        tempCars.NameItem = editWindow.Name.Text;
+            //        tempCars.PicturePath = editWindow.Preview.Source.ToString();
+            //        tempCars.Price = Math.Abs(float.Parse(editWindow.Price.Text));
+            //        tempCars.Description = editWindow.Description.Text;
+            //        tempCars.Category = editWindow.Category.SelectedValue.ToString();
+            //        if (editWindow.RadioButtonNew.IsChecked == true)
+            //            tempCars.IsAvailable = editWindow.TextBlockNew.Text;
+            //        if (editWindow.RadioButtonUsed.IsChecked == true)
+            //            tempCars.IsAvailable = editWindow.TextBlockUsed.Text;
+            //        foreach (Cars food in carslist.list)
+            //        {
+            //            if (food == (Cars)ListView.SelectedItem)
+            //            {
+            //                carslist.list[carslist.list.IndexOf(food)] = tempCars;
+            //                break;
+            //            }
+            //        }
+            //        Serializer.MyXMLSerializer(carslist);
+            //        ListView.ItemsSource = carslist.list;
 
-                }
-            }
+            //    }
+            //}
 
 
         }
@@ -186,7 +196,12 @@ namespace lab6_7
 
         }
 
-        private void Home_Click(object sender, MouseButtonEventArgs e)
+        //private void Home_Click(object sender, MouseButtonEventArgs e)
+        //{
+
+        //}
+
+        private void ShowAll_click(object sender, RoutedEventArgs e)
         {
 
         }

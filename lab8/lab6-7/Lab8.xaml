@@ -59,7 +59,7 @@
         </StackPanel>
 
         <StackPanel Grid.Row="1" VerticalAlignment="Stretch" Style="{DynamicResource MenuStyle}">
-            
+
         </StackPanel>
 
         <Grid Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="2">
@@ -71,15 +71,20 @@
                 <RowDefinition/>
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
+                <ColumnDefinition Width="119*"/>
+                <ColumnDefinition Width="54*"/>
+                <ColumnDefinition Width="173*"/>
             </Grid.ColumnDefinitions>
-            <StackPanel Grid.Row="1"  Style="{DynamicResource StackPanelStyle}" Grid.Column="0" >
+            <StackPanel Grid.Row="1"  Style="{DynamicResource StackPanelStyle}" Grid.Column="0" Grid.ColumnSpan="2" >
                 <CheckBox x:Name="CheckBox_Datatrigger" Content="Не выбрано" VerticalAlignment="Top" Margin="60,0"/>
                 <TextBlock TextWrapping="Wrap" FontSize="20" Style="{DynamicResource DataTrigger}" VerticalAlignment="Top" Height="30" Margin="60,0"/>
             </StackPanel>
             <Button Content="MultiTrigger" HorizontalAlignment="Left" Margin="0,5,0,0" VerticalAlignment="Top" Width="100" Height="44" Style="{DynamicResource ButtonsStyle}" Grid.Row="2" Grid.Column="0" />
-            <Button Content="EventTrigger" HorizontalAlignment="Left" Margin="0" VerticalAlignment="Top" Width="155" Height="35" Style="{DynamicResource EventTrigger}" Grid.Row="3" Grid.Column="0" Grid.RowSpan="2"  />
+            <Button Content="EventTrigger" HorizontalAlignment="Left" Margin="0" VerticalAlignment="Top" Width="155" Height="35" Style="{DynamicResource EventTrigger}" Grid.Row="3" Grid.Column="0"  />
+            <!--<local:User_Control1 Height="50" Grid.Column="1" Margin="276,12,10,10" Grid.Row="4"/>-->
+            <local:User_Control1 Padding="5" x:Name="TextBoxNameItem" Width="150" Height="40" Grid.Row="0"  VerticalAlignment="Top" ></local:User_Control1>
+            <local:User_Control2 x:Name="TBoxDescription"
+                             FontSize="16" Margin="0,55,120,10" Grid.Column="2" Grid.Row="2" Grid.RowSpan="3"/>
         </Grid>
 
         <StackPanel Grid.Row="2"
